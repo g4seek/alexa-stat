@@ -40,7 +40,7 @@ def fetch_alexa(rank_url, save_dir):
     save_file.close()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # 全球alexa排名
     global_rank_url = "http://www.alexa.com/topsites/global;{0}"
     global_save_dir = "E:/doc/alexa/global/" + datetime.now().strftime("%Y-%m")
