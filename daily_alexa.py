@@ -45,12 +45,25 @@ if __name__ == "__main__":
     global_rank_url = "http://www.alexa.com/topsites/global;{0}"
     global_save_dir = "E:/doc/alexa/global/" + datetime.now().strftime("%Y-%m")
     print ("-" * 10 + "global" + "-" * 10)
-    fetch_alexa(global_rank_url, global_save_dir)
+    while True:
+        try:
+            fetch_alexa(global_rank_url, global_save_dir)
+            break
+        except Exception:
+            print ("Error occurred. retrying...")
+            continue
+
     print ("-" * 10 + "global" + "-" * 10)
 
     # 中国alexa排名
     print ("-" * 10 + "china" + "-" * 10)
     china_rank_url = "http://www.alexa.com/topsites/countries;{0}/CN"
     china_save_dir = "E:/doc/alexa/china/" + datetime.now().strftime("%Y-%m")
-    fetch_alexa(china_rank_url, china_save_dir)
+    while True:
+        try:
+            fetch_alexa(china_rank_url, china_save_dir)
+            break
+        except Exception:
+            print ("Error occurred. retrying...")
+            continue
     print ("-" * 10 + "china" + "-" * 10)
